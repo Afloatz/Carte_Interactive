@@ -1,2 +1,1 @@
-# Carte_Interactive
-Application de réservation de vélo (projet OpenClassrooms)
+Application de réservation de vélo à Lyon (projet#3 Parcours DWJ OpenClassrooms)
