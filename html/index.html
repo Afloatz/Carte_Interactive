@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr"> <!--spécifie la langue du site, le français. Facilite indexation dans moteur de recherche-->
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--Afin de forcer le bon niveau de zoom aux navigateurs mobile-->
+    <meta name="description" content="Application de location de vélos à Lyon et Villeurbanne"/> <!--affiché ds résultats des moteurs de recherche-->
+    <!-- Open Graph data pour partage sur Facebook-->
+    <meta property="og:title" content="Vélo'v: Louez un vélo à Lyon!"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content=""/> <!--mettre url du site web-->
+    <meta property="og:image" content="https://webagency-fl.000webhostapp.com/images/logo.png"/> <!--mettre url du logo-->
+    <meta property="og:description" content="Locations rapide de vélos à Lyon"/>
+    <title>Vélo'V</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-header">
+            <img src="../images/Velov_Logo.gif" alt="Logo vélo'V">
+             <h1>Location de vélos en libre service dans Lyon et Villeurbanne</h1>
+        </div>
+    
+    </header>
+    
+    <h2>Fonctionnement de l'application</h2>
+
+    <div id="container-diapo">
+        <img class="slides" src="../images/1.png"/>
+        <img class="slides" src="../images/2.png"/>
+        <img class="slides" src="../images/3.png"/>
+    </div>
+    
+    <h2>Réservation d'un vélo</h2>
+
+    <div class="container">
+        <div id="map"></div>
+        <div id="station-container">
+            <div id="etape1">
+                Cliquez sur une station de la carte pour trouver votre vélo'v
+            </div>
+            <div id="station-info">
+                <h3>Détails de la station</h3><br/>
+                <p>Adresse:<span id="address"></span></p>
+                <p id="status"></p>
+                <p id="place"></p>
+                <p id="bike"></p><br/>
+                <button type="button" id="book">Réserver</button>
+            </div>
+            <div id="reservation">
+                <h3>Réservation</h3><br/>
+                <p>Pour réserver ce vélo, veuillez signer ci-dessous puis valider:</p>
+                <canvas id="canvas" width="200" height="150">
+                    Your browser does not support the HTML5 canvas tag.
+                </canvas><br/>
+                <canvas id="blank-canvas" width="200" height="150"></canvas>
+                <button type="button" id="valider">Valider</button>
+            </div>
+            <div id="confirmation">
+                <p>Votre vélo est bien réservé !</p>
+                <p>La réservation est valide pendant 20 min. Vous pouvez l'annuler en cliquant sur le bouton situé en bas de la page.</p>
+            </div>
+            <div id="annuler">
+                <p>Voulez-vous réserver un autre vélo dans une autre station?</p>
+                <p>Si oui, cliquez sur le bouton en bas de la page pour annuler votre réservation en cours et effectuer une nouvelle réservation.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer id="pied-page">
+        <p>Votre vélo vous attend à cette adresse: <span id="savedAddress"></span> </p>
+        <div id="clockdiv"> <!--Compte à rebours-->
+            <p>Votre réservation expire dans: <span class="minutes"></span>:<span class="seconds"></span> minutes</p>
+        </div>
+        <button type="button" class="cancel">Annuler la réservation</button>
+    </footer>
+
+    <script src="../js/jquery-3.2.1.js"></script>  <!--Fichier contenant la bibliothèque jQuery dans le dossier de mon projet-->
+    <script src="../js/ajax.js"></script>
+    <script src="../js/markerclusterer.js"></script>
+    <script src="../js/slider.js"></script>
+    <script src="../js/canvas.js"></script>
+    <script src="../js/reservation.js"></script>
+    <script src="../js/mon-script.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuXsRwJzTCguYAODufGa1bf8_Wvdvx4HE&callback=initMap">
+    </script>
+</body>
+
+</html>
+
+
+
